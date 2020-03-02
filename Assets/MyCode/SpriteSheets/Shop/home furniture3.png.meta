@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: bb66e05eef60e43958d7128d941ba551
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 81615394758141619
+    second: home furniture3_0
+  - first:
+      213: 6756388533301948296
+    second: home furniture3_1
+  - first:
+      213: -5426007869289030724
+    second: home furniture3_2
+  - first:
+      213: -3151260477987610760
+    second: home furniture3_3
+  - first:
+      213: -4295603983671177957
+    second: home furniture3_4
+  - first:
+      213: -2204567546333363266
+    second: home furniture3_5
+  - first:
+      213: -541448863253087489
+    second: home furniture3_6
+  - first:
+      213: -4182743450098974620
+    second: home furniture3_7
+  - first:
+      213: 6798744117847577900
+    second: home furniture3_8
+  - first:
+      213: 3586687491429617947
+    second: home furniture3_9
+  - first:
+      213: 7668205801718325783
+    second: home furniture3_10
+  - first:
+      213: 4504724862090477042
+    second: home furniture3_11
+  - first:
+      213: -103144868329802677
+    second: home furniture3_12
+  - first:
+      213: -8599762421021875692
+    second: home furniture3_13
+  - first:
+      213: 4127880054650690009
+    second: home furniture3_14
+  - first:
+      213: -7606221821379301340
+    second: home furniture3_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: home furniture3_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1191
+        width: 507
+        height: 623
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f749b9c24a474cc4901a2e1a8ec013f
+      internalID: 81615394758141619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_1
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1489
+        width: 490
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7cee5e6b4d748b2876c466a57a717c
+      internalID: 6756388533301948296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_2
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 988
+        width: 327
+        height: 809
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519e303c1f5f74f7eb14658981ed5d21
+      internalID: -5426007869289030724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_3
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 1391
+        width: 465
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcf4f7c6b8274c55b1ff7d060318f59
+      internalID: -3151260477987610760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_4
+      rect:
+        serializedVersion: 2
+        x: 2519
+        y: 1498
+        width: 489
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ee2be5252a5445db867ad494bf4886
+      internalID: -4295603983671177957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_5
+      rect:
+        serializedVersion: 2
+        x: 3321
+        y: 1388
+        width: 211
+        height: 435
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648745cc596f346c5a51a8f6de895a36
+      internalID: -2204567546333363266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_6
+      rect:
+        serializedVersion: 2
+        x: 3921
+        y: 1568
+        width: 333
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fb98fa1bc3a44068b1b376e6fc5549
+      internalID: -541448863253087489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_7
+      rect:
+        serializedVersion: 2
+        x: 4590
+        y: 1046
+        width: 545
+        height: 788
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf86172b8eb140e0bc1469ee4766b5f
+      internalID: -4182743450098974620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_8
+      rect:
+        serializedVersion: 2
+        x: 5509
+        y: 1089
+        width: 258
+        height: 621
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b55c739c64a24815926551ccb791a60
+      internalID: 6798744117847577900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_9
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 857
+        width: 487
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e59882d9b0c045bea0e2b9f1f33dae0
+      internalID: 3586687491429617947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_10
+      rect:
+        serializedVersion: 2
+        x: 4585
+        y: 1202
+        width: 17
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde822d0de1a8464c924295153d15130
+      internalID: 7668205801718325783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 112
+        width: 1704
+        height: 652
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13dd54c0f73c403bb90576daf7e2c03
+      internalID: 4504724862090477042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_12
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 74
+        width: 1179
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc31418e1cec4b41882bb263057cb22
+      internalID: -103144868329802677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_13
+      rect:
+        serializedVersion: 2
+        x: 3831
+        y: 10
+        width: 605
+        height: 954
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad60c4990b8c4375857febaed942235
+      internalID: -8599762421021875692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_14
+      rect:
+        serializedVersion: 2
+        x: 4746
+        y: 79
+        width: 1119
+        height: 687
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da44f79b7f413419a973c815cd36273f
+      internalID: 4127880054650690009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: home furniture3_15
+      rect:
+        serializedVersion: 2
+        x: 2441
+        y: 682
+        width: 270
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a488441542404323b25c86099b6e2ec
+      internalID: -7606221821379301340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 512342c6b6d544fa0aa7b659d44893fe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
