@@ -25256,7 +25256,7 @@ MonoBehaviour:
   montainPanel: {fileID: 425398299}
   lakePanel: {fileID: 1074752309}
   seaPanel: {fileID: 1937156746}
-  homeState: 3
+  homeState: 1
   natureState: 0
   thinking: {fileID: 524138334}
   energyHealthImage:
