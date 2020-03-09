@@ -105,7 +105,7 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
 
             // moves the joystick handle "knob" image
             joystickKnobImage.rectTransform.anchoredPosition =
-             new Vector3(inputVector.x * (bgImage.rectTransform.sizeDelta.x / joystickHandleDistance),
+             new Vector3(0 /*inputVector.x * (bgImage.rectTransform.sizeDelta.x / joystickHandleDistance)*/,
                          inputVector.y * (bgImage.rectTransform.sizeDelta.y / joystickHandleDistance));
 
             // if the joystick is not set to stay in a fixed position

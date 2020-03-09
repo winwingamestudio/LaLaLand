@@ -67,7 +67,7 @@ public class SingleJoystickTouchController : MonoBehaviour
                         singleSideFingerID = myTouches[i].fingerId; // stores the unique id for this touch that happened on the left-side half of the screen
 
                         // if the single joystick will drag with any touch (single joystick is not set to stay in a fixed position)
-                        if (singleJoystick.joystickStaysInFixedPosition == false)
+                        //if (singleJoystick.joystickStaysInFixedPosition == false)
                         {
                             var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
                             currentPosition.x = myTouches[i].position.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x / 2; // calculates the x position of the single joystick to where the screen was touched
@@ -83,7 +83,7 @@ public class SingleJoystickTouchController : MonoBehaviour
                             singleJoystickBackgroundImage.enabled = true;
                             singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
                         }
-                        else
+                        /*else
                         {
                             // single joystick stays fixed, does not set position of single joystick on touch
 
@@ -98,7 +98,7 @@ public class SingleJoystickTouchController : MonoBehaviour
                                     singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
                                 }
                             }
-                        }
+                        }*/
                 }
                 
 
@@ -113,6 +113,44 @@ public class SingleJoystickTouchController : MonoBehaviour
                         singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible;
                     }
                 }
+            }
+        }
+
+        WithMouseInput();
+    }
+
+    void WithMouseInput()
+    {
+        // if the screen has been touched
+        if (Input.GetMouseButton(0))
+        {
+            // if this touch just started (finger is down for the first time), for this particular touch 
+            if (Input.GetMouseButtonDown(0))
+            {
+                {
+                    var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
+                    currentPosition.x = Input.mousePosition.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x / 2; // calculates the x position of the single joystick to where the screen was touched
+                    currentPosition.y = Input.mousePosition.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y / 2; // calculates the y position of the single joystick to where the screen was touched
+
+                    // keeps this single joystick within the screen
+                    currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
+                    currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
+
+                    singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
+
+                    // enables single joystick on touch
+                    singleJoystickBackgroundImage.enabled = true;
+                    singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
+                }
+            }
+            
+
+            // if this touch has ended (finger is up and now off of the screen), for this particular touch 
+            if (Input.GetMouseButtonUp(0))
+            {
+                // makes the single joystick disappear or stay visible
+                singleJoystickBackgroundImage.enabled = singleJoyStickAlwaysVisible;
+                singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible;
             }
         }
     }
