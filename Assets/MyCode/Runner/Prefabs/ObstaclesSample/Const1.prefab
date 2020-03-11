@@ -114,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heallingGoneSound: {fileID: 8300000, guid: 9b0d8a8100a324a8189156abbdc973b2, type: 3}
-  ballonPop: {fileID: 8300000, guid: 84ff27b0587e94a8aa2e64d61e7ddb80, type: 3}
 --- !u!114 &-8610422522642114015
 MonoBehaviour:
   m_ObjectHideFlags: 0

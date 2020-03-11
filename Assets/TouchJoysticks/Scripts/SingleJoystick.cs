@@ -18,6 +18,8 @@ using UnityEngine.EventSystems;
 
 public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    public bool isActive{get;set;}
+
     [Tooltip("When checked, this joystick will stay in a fixed position.")]
     public bool joystickStaysInFixedPosition = false;
     [Tooltip("Sets the maximum distance the handle (knob) stays away from the center of this joystick. If the joystick handle doesn't look or feel right you can change this value. Must be a whole number. Default value is 4.")]
@@ -32,6 +34,8 @@ public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
 
     private void Start()
     {
+        isActive = true;
+
         if (GetComponent<Image>() == null)
         {
             Debug.LogError("There is no joystick image attached to this script.");

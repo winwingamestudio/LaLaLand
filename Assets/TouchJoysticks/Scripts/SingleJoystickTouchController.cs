@@ -53,105 +53,101 @@ public class SingleJoystickTouchController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // if the screen has been touched
-        if (Input.touchCount > 0)
+        if (singleJoystick.isActive)
         {
-            Touch[] myTouches = Input.touches; // gets all the touches and stores them in an array
-
-            // loops through all the current touches
-            for (int i = 0; i < Input.touchCount; i++)
+            // if the screen has been touched
+            if (Input.touchCount > 0)
             {
-                // if this touch just started (finger is down for the first time), for this particular touch 
-                if (myTouches[i].phase == TouchPhase.Began)
+                Touch[] myTouches = Input.touches; // gets all the touches and stores them in an array
+
+                // loops through all the current touches
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                        singleSideFingerID = myTouches[i].fingerId; // stores the unique id for this touch that happened on the left-side half of the screen
+                    // if this touch just started (finger is down for the first time), for this particular touch 
+                    if (myTouches[i].phase == TouchPhase.Began)
+                    {
+                            singleSideFingerID = myTouches[i].fingerId; // stores the unique id for this touch that happened on the left-side half of the screen
 
-                        // if the single joystick will drag with any touch (single joystick is not set to stay in a fixed position)
-                        //if (singleJoystick.joystickStaysInFixedPosition == false)
-                        {
-                            var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
-                            currentPosition.x = myTouches[i].position.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x / 2; // calculates the x position of the single joystick to where the screen was touched
-                            currentPosition.y = myTouches[i].position.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y / 2; // calculates the y position of the single joystick to where the screen was touched
-
-                            // keeps this single joystick within the screen
-                            currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
-                            currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
-
-                            singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
-
-                            // enables single joystick on touch
-                            singleJoystickBackgroundImage.enabled = true;
-                            singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
-                        }
-                        /*else
-                        {
-                            // single joystick stays fixed, does not set position of single joystick on touch
-
-                            // if the touch happens within the fixed area of the single joystick's background image within the x coordinate
-                            if ((myTouches[i].position.x <= singleJoystickBackgroundImage.rectTransform.position.x) && (myTouches[i].position.x >= (singleJoystickBackgroundImage.rectTransform.position.x - singleJoystickBackgroundImage.rectTransform.sizeDelta.x)))
+                            // if the single joystick will drag with any touch (single joystick is not set to stay in a fixed position)
+                            if (singleJoystick.joystickStaysInFixedPosition == false)
                             {
-                                // and the touch also happens within the single joystick's background image y coordinate
-                                if ((myTouches[i].position.y >= singleJoystickBackgroundImage.rectTransform.position.y) && (myTouches[i].position.y <= (singleJoystickBackgroundImage.rectTransform.position.y + singleJoystickBackgroundImage.rectTransform.sizeDelta.y)))
+                                var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
+                                currentPosition.x = myTouches[i].position.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x / 2; // calculates the x position of the single joystick to where the screen was touched
+                                currentPosition.y = myTouches[i].position.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y / 2; // calculates the y position of the single joystick to where the screen was touched
+
+                                // keeps this single joystick within the screen
+                                currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
+                                currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
+
+                                singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
+
+                                // enables single joystick on touch
+                                singleJoystickBackgroundImage.enabled = true;
+                                singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
+                            }
+                            else
+                            {
+                                // single joystick stays fixed, does not set position of single joystick on touch
+
+                                // if the touch happens within the fixed area of the single joystick's background image within the x coordinate
+                                if ((myTouches[i].position.x <= singleJoystickBackgroundImage.rectTransform.position.x) && (myTouches[i].position.x >= (singleJoystickBackgroundImage.rectTransform.position.x - singleJoystickBackgroundImage.rectTransform.sizeDelta.x)))
                                 {
-                                    // makes the single joystick appear 
-                                    singleJoystickBackgroundImage.enabled = true;
-                                    singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
+                                    // and the touch also happens within the single joystick's background image y coordinate
+                                    if ((myTouches[i].position.y >= singleJoystickBackgroundImage.rectTransform.position.y) && (myTouches[i].position.y <= (singleJoystickBackgroundImage.rectTransform.position.y + singleJoystickBackgroundImage.rectTransform.sizeDelta.y)))
+                                    {
+                                        // makes the single joystick appear 
+                                        singleJoystickBackgroundImage.enabled = true;
+                                        singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
+                                    }
                                 }
                             }
-                        }*/
-                }
-                
+                    }
+                    
 
-                // if this touch has ended (finger is up and now off of the screen), for this particular touch 
-                if (myTouches[i].phase == TouchPhase.Ended)
-                {
-                    // if this touch is the touch that began on the left half of the screen
-                    if (myTouches[i].fingerId == singleSideFingerID)
+                    // if this touch has ended (finger is up and now off of the screen), for this particular touch 
+                    if (myTouches[i].phase == TouchPhase.Ended)
                     {
-                        // makes the single joystick disappear or stay visible
-                        singleJoystickBackgroundImage.enabled = singleJoyStickAlwaysVisible;
-                        singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible;
+                        // if this touch is the touch that began on the left half of the screen
+                        if (myTouches[i].fingerId == singleSideFingerID)
+                        {
+                            // makes the single joystick disappear or stay visible
+                            singleJoystickBackgroundImage.enabled = singleJoyStickAlwaysVisible;
+                            singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible;
+                        }
                     }
                 }
             }
-        }
 
-        WithMouseInput();
+            WithMouseInput();
+        }
     }
 
     void WithMouseInput()
     {
-        // if the screen has been touched
-        if (Input.GetMouseButton(0))
+        // if this touch just started (finger is down for the first time), for this particular touch 
+        if (Input.GetMouseButtonDown(0))
         {
-            // if this touch just started (finger is down for the first time), for this particular touch 
-            if (Input.GetMouseButtonDown(0))
-            {
-                {
-                    var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
-                    currentPosition.x = Input.mousePosition.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x / 2; // calculates the x position of the single joystick to where the screen was touched
-                    currentPosition.y = Input.mousePosition.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y / 2; // calculates the y position of the single joystick to where the screen was touched
+            var currentPosition = singleJoystickBackgroundImage.rectTransform.position; // gets the current position of the single joystick
+            currentPosition.x = Input.mousePosition.x + singleJoystickBackgroundImage.rectTransform.sizeDelta.x / 2; // calculates the x position of the single joystick to where the screen was touched
+            currentPosition.y = Input.mousePosition.y - singleJoystickBackgroundImage.rectTransform.sizeDelta.y / 2; // calculates the y position of the single joystick to where the screen was touched
 
-                    // keeps this single joystick within the screen
-                    currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
-                    currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
+            // keeps this single joystick within the screen
+            currentPosition.x = Mathf.Clamp(currentPosition.x, 0 + singleJoystickBackgroundImage.rectTransform.sizeDelta.x, Screen.width);
+            currentPosition.y = Mathf.Clamp(currentPosition.y, 0, Screen.height - singleJoystickBackgroundImage.rectTransform.sizeDelta.y);
 
-                    singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
+            singleJoystickBackgroundImage.rectTransform.position = currentPosition; // sets the position of the single joystick to where the screen was touched (limited to the left half of the screen)
 
-                    // enables single joystick on touch
-                    singleJoystickBackgroundImage.enabled = true;
-                    singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
-                }
-            }
-            
+            // enables single joystick on touch
+            singleJoystickBackgroundImage.enabled = true;
+            singleJoystickBackgroundImage.rectTransform.GetChild(0).GetComponent<Image>().enabled = true;
+        }
 
-            // if this touch has ended (finger is up and now off of the screen), for this particular touch 
-            if (Input.GetMouseButtonUp(0))
-            {
-                // makes the single joystick disappear or stay visible
-                singleJoystickBackgroundImage.enabled = singleJoyStickAlwaysVisible;
-                singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible;
-            }
+        // if this touch has ended (finger is up and now off of the screen), for this particular touch 
+        if (Input.GetMouseButtonUp(0))
+        {
+            // makes the single joystick disappear or stay visible
+            singleJoystickBackgroundImage.enabled = singleJoyStickAlwaysVisible;
+            singleJoystickHandleImage.enabled = singleJoyStickAlwaysVisible;
         }
     }
 }

@@ -34,9 +34,9 @@ public class ObstaclesBallon : MonoBehaviour
 
   	}
 
-  	private void OnCollisionEnter2D(Collision2D other)
+  	private void OnTriggerEnter2D(Collider2D other)
   	{
-  			if (other.collider.CompareTag("Player"))
+  			if (other.CompareTag("Player"))
   			{
             // play the audio clip for jumping
             AudioSource.PlayClipAtPoint(ballonPop, transform.position);

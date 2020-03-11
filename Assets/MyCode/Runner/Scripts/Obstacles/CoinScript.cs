@@ -32,9 +32,9 @@ public class CoinScript : MonoBehaviour {
 
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-			if (other.collider.CompareTag("Player"))
+			if (other.CompareTag("Player"))
 			{
         AudioSource.PlayClipAtPoint(gotCoinSound, transform.position);
         GameManager.Instance.GetScore();

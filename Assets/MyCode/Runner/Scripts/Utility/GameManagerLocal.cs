@@ -184,6 +184,15 @@ public class GameManagerLocal : MonoBehaviour {
 
 	}
 
+	public void ActivateJoystick()
+	{
+		singleJoystickPlayerController.singleJoystick.isActive = true;
+	}
+	public void DeactivateJoystick()
+	{
+		singleJoystickPlayerController.singleJoystick.isActive = false;
+	}
+
 	IEnumerator GameOverBreathing()
 	{
 		yield return new WaitForSeconds(3f);

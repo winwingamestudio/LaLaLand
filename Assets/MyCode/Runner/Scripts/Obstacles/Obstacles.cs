@@ -36,9 +36,9 @@ public class Obstacles : MonoBehaviour {
 
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-			if (other.collider.CompareTag("Player"))
+			if (other.CompareTag("Player"))
 			{
 				Debug.Log(GameManager.Instance.energyHealthValue);
 				if(GameManager.Instance.energyHealthValue > 0)

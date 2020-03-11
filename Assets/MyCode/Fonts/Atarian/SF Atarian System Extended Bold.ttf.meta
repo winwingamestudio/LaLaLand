@@ -11,7 +11,10 @@ TrueTypeFontImporter:
   fontName: SF Atarian System Extended
   fontNames:
   - SF Atarian System Extended
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b0b00b42ce749430cbcc918330ee34d7, type: 3}
+  - {fileID: 12800000, guid: ae5d9dc40b470478fa2063994c60a2ab, type: 3}
+  - {fileID: 12800000, guid: d22de3ccddbe84e9884f063ff0f65a01, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
