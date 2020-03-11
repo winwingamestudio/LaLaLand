@@ -13,7 +13,7 @@ public class LevelGenerator : MonoBehaviour
   [SerializeField] private List <Transform> levelPartFourthList;
 
 
-  [SerializeField] private GameObject player;
+  [SerializeField] public GameObject player;
 
   private enum Level {
     First,
