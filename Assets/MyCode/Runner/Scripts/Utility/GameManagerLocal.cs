@@ -28,6 +28,8 @@ public class GameManagerLocal : MonoBehaviour {
 	public GameObject gameOverAudio;
 
 	public SingleJoystickPlayerController singleJoystickPlayerController;
+	public LevelGenerator levelGenerator;
+
 
 	// Use this for initialization
 	void Start () {
@@ -80,6 +82,7 @@ public class GameManagerLocal : MonoBehaviour {
 		this.groundPlayer = cc;
 		this.groundPlayer.transform.SetParent(objectParent.transform.parent, false);
 		singleJoystickPlayerController.myRotationObject = this.groundPlayer.transform;
+		levelGenerator.player = this.groundPlayer;
 
 		StartGameCanvas.SetActive(true);
 		pausePanel.SetActive(false);
