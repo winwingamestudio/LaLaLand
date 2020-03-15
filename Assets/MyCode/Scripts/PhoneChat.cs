@@ -6,47 +6,56 @@ using UnityEngine.UI;
 
 public class PhoneChat : MonoBehaviour
 {
-    public GameObject phone;
     public GameObject content;
     public GameObject myMessage;
-    public GameObject theirMessage;
-    public Message[] messages;
+    public GameObject hisMessage;
+    public PhoneMessage[] messages;
 
     private int messageIndex;
     private GameObject _myMessage;
-    private GameObject _TheirMessage;
+    private GameObject _hisMessage;
 
     void Start()
     {
-
+        StartCoroutine(HisNextMessage());
     }
 
-    public void NextMessage()
+    public void MyNextMessage()
     {
-        if (messages[messageIndex].type == Message.MessageType.mine)
+        if (messages[messageIndex].name == PhoneMessage.Sender.Me)
         {
             _myMessage = Instantiate(myMessage, content.transform);
             _myMessage.GetComponentInChildren<Text>().text = messages[messageIndex].text;
-        }
-        else
-        {
-            _TheirMessage = Instantiate(theirMessage, content.transform);
-            _TheirMessage.GetComponentInChildren<Text>().text = messages[messageIndex].text;
-        }
 
-        messageIndex++;
+            messageIndex++;
+            StartCoroutine(HisNextMessage());
+        }
+    }
+
+    IEnumerator HisNextMessage()
+    {
+        if (messages[messageIndex].name == PhoneMessage.Sender.He)
+        {
+            yield return new WaitForSeconds(1);
+
+            _hisMessage = Instantiate(hisMessage, content.transform);
+            _hisMessage.GetComponentInChildren<Text>().text = messages[messageIndex].text;
+
+            messageIndex++;
+            StartCoroutine(HisNextMessage());
+        }
     }
 }
 
 [Serializable]
-public class Message
+public class PhoneMessage
 {
-    public enum MessageType
+    public enum Sender
     {
-        mine,
-        theirs
+        Me,
+        He
     }
 
-    public MessageType type;
+    public Sender name;
     public string text;
 }
