@@ -49,7 +49,9 @@ public class NewBreathingPractice : MonoBehaviour
 
 
 
-
+  public GameObject chooseBreathingOptionPanel;
+  private bool _useMicrophone;
+  private int holdTouchCount;
 
 
 
@@ -76,7 +78,6 @@ public class NewBreathingPractice : MonoBehaviour
         replayBtn.SetActive(true);
         GameStart();
       }
-
       else
       {
 
@@ -130,10 +131,19 @@ public class NewBreathingPractice : MonoBehaviour
     {
       if(circleBreathing.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("BreathingAnim"))
       {
+        if (exhaleTxt.activeSelf == true)
+          holdTouchCount = 0;
+
         inhaleTxt.SetActive(true);
         exhaleTxt.SetActive(false);
         inhaleSound.SetActive(true);
         exhaleSound.SetActive(false);
+
+        if (_useMicrophone == false)
+        {
+          if (Input.GetMouseButton(0))
+            holdTouchCount++;
+        }
       }
 
       if (circleBreathing.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("BreathingPauseAnim"))
@@ -159,7 +169,6 @@ public class NewBreathingPractice : MonoBehaviour
         }
       }
 
-
       if(circleBreathing.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("BreathOutAnim"))
       {
         inhaleTxt.SetActive(false);
@@ -170,11 +179,31 @@ public class NewBreathingPractice : MonoBehaviour
         if(increaseCloudNum)
         IncreaseCloudNum();
 
-        if( micVolume.GetComponent<MicrophoneInput>().loudness > 10)
-        cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = true;
+        if (_useMicrophone == true)
+        {
+          if( micVolume.GetComponent<MicrophoneInput>().loudness > 10)
+          cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = true;
 
-        if( micVolume.GetComponent<MicrophoneInput>().loudness < 2 )
-        cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
+          if( micVolume.GetComponent<MicrophoneInput>().loudness < 2 )
+          cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
+        }
+        else
+        {
+          if (!Input.GetMouseButton(0))
+          {
+            if (holdTouchCount > 0)
+            {
+              holdTouchCount--;
+              cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = true;
+            }
+            else
+              cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
+          }
+          else
+          {
+              cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
+          }
+        }
       }
 
     }
@@ -217,7 +246,7 @@ public class NewBreathingPractice : MonoBehaviour
       //breathingPracticeAnimation.SetActive(false);
       //var theBarRectTransform = ballon.transform as RectTransform;
       //theBarRectTransform.sizeDelta = new Vector2 (theBarRectTransform.sizeDelta.x, ballonY);
-    }
+  }
 
     void GameStart()
     {
@@ -231,6 +260,22 @@ public class NewBreathingPractice : MonoBehaviour
       gameCanvas.SetActive(false);
       gameOverCanvas.SetActive(true);
       FindObjectOfType<GameManager>().comeFromOut = false;
+    }
+
+    public void UseMicrophone()
+    {
+        _useMicrophone = true;
+        chooseBreathingOptionPanel.SetActive(false);
+        inhaleTxt.GetComponent<Text>().text = "Inhale";
+        exhaleTxt.GetComponent<Text>().text = "Exhale";
+    }
+
+    public void UseTouch()
+    {
+        _useMicrophone = false;
+        chooseBreathingOptionPanel.SetActive(false);
+        inhaleTxt.GetComponent<Text>().text = "Hold";
+        exhaleTxt.GetComponent<Text>().text = "Release";
     }
 
 }
