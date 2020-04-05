@@ -51,7 +51,6 @@ public class NewBreathingPractice : MonoBehaviour
 
   public GameObject chooseBreathingOptionPanel;
   private bool _useMicrophone;
-  private int holdTouchCount;
 
 
 
@@ -131,19 +130,10 @@ public class NewBreathingPractice : MonoBehaviour
     {
       if(circleBreathing.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("BreathingAnim"))
       {
-        if (exhaleTxt.activeSelf == true)
-          holdTouchCount = 0;
-
         inhaleTxt.SetActive(true);
         exhaleTxt.SetActive(false);
         inhaleSound.SetActive(true);
         exhaleSound.SetActive(false);
-
-        if (_useMicrophone == false)
-        {
-          if (Input.GetMouseButton(0))
-            holdTouchCount++;
-        }
       }
 
       if (circleBreathing.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("BreathingPauseAnim"))
@@ -189,20 +179,10 @@ public class NewBreathingPractice : MonoBehaviour
         }
         else
         {
-          if (!Input.GetMouseButton(0))
-          {
-            if (holdTouchCount > 0)
-            {
-              holdTouchCount--;
-              cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = true;
-            }
-            else
-              cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
-          }
+          if(Input.GetMouseButton(0))
+            cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = true;
           else
-          {
-              cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
-          }
+            cloudsNew.transform.GetChild(cloudNum).gameObject.GetComponent<Animator>().enabled = false;
         }
       }
 
@@ -274,8 +254,8 @@ public class NewBreathingPractice : MonoBehaviour
     {
         _useMicrophone = false;
         chooseBreathingOptionPanel.SetActive(false);
-        inhaleTxt.GetComponent<Text>().text = "Hold";
-        exhaleTxt.GetComponent<Text>().text = "Release";
+        inhaleTxt.GetComponent<Text>().text = "Release";
+        exhaleTxt.GetComponent<Text>().text = "Hold";
     }
 
 }
